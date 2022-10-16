@@ -43,10 +43,39 @@ const displayLoadAllNews = async (allNews) => {
 
     displayDiv.innerHTML = `
   <div class="card w-3/4 mx-auto glass flex flex-row  ">
-       <figure><img class="w-72  " src="${news.image_url}" alt="car!"/></figure>
+       <figure><img class="h-full " src="${
+         news.image_url
+       }" alt="car!"/></figure>
      <div class="card-body">
-            <h2 class="card-title">${news.author.name}</h2>
-            <p>How to park your car at your garage?</p>
+            <h2 class="card-title">${news.title}</h2>
+            <p>${news.details.slice(0, 150)}</p>
+            <div class = " flex items-center justify-between mt-2"> 
+               
+              
+               <div class ="flex items-center space-x-4"> 
+               <img class ="rounded-full w-7 h-7" src="${
+                 news.author.img
+               }" alt= "img"/> 
+               <span>
+               <h4 class ="text-sx text-slate-900"> ${news.author.name}</h4>
+               <p class ="text-sm text-slate-500">${
+                 news.author.published_date
+               }</p>
+               </span>
+               </div>
+                  
+                <span class = "flex items-center space-x-2">
+                <i class="fa fa-eye"></i>
+                <h2>${news.rating.number}M</h2>
+                </span>
+                <span>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                </span>
+                <i class="fa fa-arrow-right"></i>
+            </div>
             <div class="card-actions justify-end">
                 <button class="btn btn-primary">Learn now!</button>
             </div>
