@@ -51,8 +51,8 @@ const displayLoadAllNews = async (allNews) => {
     const displayDiv = document.createElement("div");
 
     displayDiv.innerHTML = `
-  <div class="card w-3/4 mx-auto glass flex  md:flex-row my-8 ">
-   <div class="h-full w-full"> <figure><img  src="${
+  <div class="card  glass flex  md:flex-row my-8 ">
+   <div > <figure><img  class="h-full" src="${
      news.image_url
    }" alt="car!"/></figure></div>
      <div class="card-body">
