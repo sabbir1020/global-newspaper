@@ -56,15 +56,39 @@
         </div>
       </section>
       <!-- News categories  -->
-      <div id="display-catagories" class="flex justify-evenly">
+      <div id="display-catagories" class="flex  flex-wrap justify-evenly">
         
       </div>
     </header>
     <main>
+  
+        <section>
+            <!-- dynamic length  -->
+          <div id="total-newsperpar">
+           
+        </div>    
+      
+      <!-- loadding website  -->
+      <div id="progress-container" class="w-1/2 mx-auto hidden">
+          <progress class="progress"></progress>
+      </div>
+        </section>
         <!-- Newsperpar card section  -->
-    <section id="allnews-container">
-       
+    <section id="allnews-container" class="rounded-lg grid ">
+        
  </section>
+ <!-- open modal section   -->
+    <section >
+        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box relative">
+    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+  <div id="uniqueId-container">
+    
+  </div>
+  </div>
+</div>
+    </section>
     </main>
     <script src="js/app.js"></script>
   </body>
