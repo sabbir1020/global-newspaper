@@ -67,7 +67,9 @@ const displayLoadAllNews = async (allNews) => {
                }" alt= "img"/> 
                <span>
                <h4 class ="text-sx text-slate-900"> ${
-                 news.author.name ? news.author.name : "Author Name nai "
+                 news.author.name
+                   ? news.author.name
+                   : "Can't found Author Name "
                }</h4>
                <p class ="text-sm text-slate-500">${
                  news.author.published_date
