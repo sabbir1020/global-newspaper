@@ -38,16 +38,21 @@ const loadAllNewsParper = async (id) => {
 };
 const displayLoadAllNews = async (allNews) => {
   // totalNewspaper length
+  console.log(allNews);
+
   const totalNewspaper = document.getElementById("total-newsperpar");
   totalNewspaper.innerHTML = `
      <h1 class = "text-2xl text-center">Total Newsperpar ${allNews.length} </h1>
      `;
+  allNews.sort((a, b) => {
+    return b.total_view - a.total_view;
+  });
   //   console.log(allNews.length);
   //   const allNews = await loadAllNewsParper();
   const allNewsContainer = document.getElementById("allnews-container");
   allNewsContainer.textContent = "";
   allNews.forEach((news) => {
-    // console.log(news);
+    console.log(typeof news.rating.number);
     const displayDiv = document.createElement("div");
 
     displayDiv.innerHTML = `
@@ -81,7 +86,7 @@ const displayLoadAllNews = async (allNews) => {
                   
                 <span class = "flex items-center space-x-2">
                 <i class="fa fa-eye"></i>
-                <h2>${news.rating.number}M</h2>
+                <h2>${news.total_view}</h2>
                 </span>
                 <span>
                 <i class="fa fa-star"></i>
@@ -133,7 +138,7 @@ const newsDatailsDisplay = (detailsNews) => {
   </span>
   <span class = "flex  items-center">
   <i class="fa fa-eye m-2"></i>
-    <h2>${detailsNews.rating.number}M</h2>
+    <h2>${detailsNews.total_view}</h2>
   </span>
   </div>
   <p class="py-4">${detailsNews.details}</p>
