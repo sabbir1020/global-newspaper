@@ -47,7 +47,7 @@ const displayLoadAllNews = async (allNews) => {
   const allNewsContainer = document.getElementById("allnews-container");
   allNewsContainer.textContent = "";
   allNews.forEach((news) => {
-    console.log(news);
+    // console.log(news);
     const displayDiv = document.createElement("div");
 
     displayDiv.innerHTML = `
@@ -71,6 +71,8 @@ const displayLoadAllNews = async (allNews) => {
                }</h4>
                <p class ="text-sm text-slate-500">${
                  news.author.published_date
+                   ? news.author.published_date
+                   : "can't not published date"
                }</p>
                </span>
                </div>
@@ -104,12 +106,38 @@ const displayLoadAllNews = async (allNews) => {
 
 //  newsDatails function
 const newsDatails = async (uniqueId) => {
+  const url = `https://openapi.programming-hero.com/api/news/${uniqueId}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  newsDatailsDisplay(data.data[0]);
+};
+const newsDatailsDisplay = (detailsNews) => {
   const uniqueIdContainer = document.getElementById("uniqueId-container");
   uniqueIdContainer.innerHTML = `
-    <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
-    <p class="py-4">${uniqueId.details}</p>
-    `;
-  console.log(uniqueId);
+  <div> 
+  <h3 class="text-lg font-bold">${detailsNews.title}</h3>
+  <div class = "flex justify-between items-center">
+  <span>
+  <h3 class ="text-sm font-bold mt-2">${
+    detailsNews.author.name
+      ? detailsNews.author.name
+      : "Can not found author Name"
+  }</h3>
+  <p class = "text-xs">${
+    detailsNews.author.published_date
+      ? detailsNews.author.published_date
+      : "Can not found Published date"
+  }</p>
+  </span>
+  <span class = "flex  items-center">
+  <i class="fa fa-eye m-2"></i>
+    <h2>${detailsNews.rating.number}M</h2>
+  </span>
+  </div>
+  <p class="py-4">${detailsNews.details}</p>
+  </div>
+  `;
+  console.log(detailsNews);
 };
 
 // spinnerLoading function
