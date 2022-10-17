@@ -51,7 +51,7 @@ const displayLoadAllNews = async (allNews) => {
     return b.total_view - a.total_view;
   });
   //   console.log(allNews.length);
-  //   const allNews = await loadAllNewsParper();
+
   const allNewsContainer = document.getElementById("allnews-container");
   allNewsContainer.textContent = "";
   allNews.forEach((news) => {
@@ -65,7 +65,7 @@ const displayLoadAllNews = async (allNews) => {
    }" alt="car!"/></figure></div>
      <div class="card-body">
             <h2 class="card-title">${news.title ? news.title : "title nai"}</h2>
-            <p>${news.details.slice(0, 150)}...</p>
+            <p>${news.details.slice(0, 150) + "..."}</p>
             <div class = " flex  items-center justify-between mt-2"> 
                
               
@@ -89,7 +89,9 @@ const displayLoadAllNews = async (allNews) => {
                   
                 <span class = "flex items-center space-x-2">
                 <i class="fa fa-eye"></i>
-                <h2>${news.total_view}</h2>
+                <h2>${
+                  news.total_view ? news.total_view : "can't found total view"
+                }</h2>
                 </span>
                 <span>
                 <i class="fa fa-star"></i>
@@ -102,7 +104,7 @@ const displayLoadAllNews = async (allNews) => {
             <div class="card-actions justify-end">
                 <label  onclick = "newsDatails('${
                   news._id
-                }')" for="my-modal-3" class="btn modal-button btn-primary">open modal</label>
+                }')" for="my-modal-3" class="btn modal-button btn-primary">News Details</label>
             </div>
       </div>
    </div>
@@ -141,7 +143,9 @@ const newsDatailsDisplay = (detailsNews) => {
   </span>
   <span class = "flex  items-center">
   <i class="fa fa-eye m-2"></i>
-    <h2>${detailsNews.total_view}</h2>
+    <h2>${
+      detailsNews.total_view ? detailsNews.total_view : "can't found total view"
+    }</h2>
   </span>
   </div>
   <p class="py-4">${detailsNews.details}</p>
