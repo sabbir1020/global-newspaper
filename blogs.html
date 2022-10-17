@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1 class="text-3xl text-center mt-3 mb-3">Blogs</h1>
+    <section class="flex flex-col gap-4 p-8">
+      <div
+        tabindex="0"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+      >
+        <div class="collapse-title text-xl font-medium">
+          What is difference between var, let and const in JavaScript?
+        </div>
+        <div class="collapse-content">
+          <p>
+            A variable declaration is simply telling the computer that a
+            variable exists and what value it should start with. Similar to
+            other programming languages JavaScript also allows for the
+            declaration of variables.
+          </p>
+          <br />
+          <p>
+            <span class="text-2xl">let:</span> The let keyword declares a
+            block-scoped local variable, optionally initializing it to a value.
+            Block-scoped means that the variable is only available within the
+            block.
+          </p>
+          <br />
+          <p>
+            <span class="text-2xl">var</span> The var keyword declares a
+            function-scoped or global variable, optionally initializing it to a
+            value. Function-scoped means that the variable is only available
+            within the function it was declared in. Global variables are
+            available throughout your entire code.
+          </p>
+          <br />
+          <p>
+            <span class="text-2xl">const:</span> The const keyword declares a
+            block-scoped, immutable constant variable, i.e. a variable that
+            can’t be reassigned. Constants are also called “immutable
+            variables”, but that’s a bit of a misnomer since they are actually
+            variables – just ones that can’t be reassigned.
+          </p>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+      >
+        <div class="collapse-title text-xl font-medium">
+          map foreach filter find difference?
+        </div>
+        <div class="collapse-content">
+          <p>
+            map() --> transform each item in an array and output to a new array
+            without altering the original array. filter remove items of an array
+            based on some criteria without altering the original array. forEach
+            perform some function on each item of an array.
+          </p>
+          <br />
+          <p>
+            The filter() --> method in JavaScript creates a new array with the
+            elements that satisfies the provided condition. This method calls a
+            provided function for each element in array and verifies the
+            condition given in the provided function and passes only those
+            elements that satisfy the given condition.
+          </p>
+          <br />
+          <p>
+            forEach() --> is used to execute the same code on every element in
+            an array but does not change the array and it returns undefined.
+            Example: In the example below we would use .forEach() to iterate
+            over an array of food and log that we would want to eat each of
+            them.
+          </p>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box"
+      >
+        <div class="collapse-title text-xl font-medium">
+          What is the use of template string in JavaScript?
+        </div>
+        <div class="collapse-content">
+          <p>
+            Template literals are literals delimited with backtick ( ` )
+            characters, allowing for multi-line strings, string interpolation
+            with embedded expressions, and special constructs called tagged
+            templates.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

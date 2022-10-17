@@ -38,7 +38,10 @@ const loadAllNewsParper = async (id) => {
 };
 const displayLoadAllNews = async (allNews) => {
   // totalNewspaper length
-  console.log(allNews);
+  if (allNews.length === 0) {
+    alert('Can"t found news');
+  }
+  // console.log(allNews);
 
   const totalNewspaper = document.getElementById("total-newsperpar");
   totalNewspaper.innerHTML = `
